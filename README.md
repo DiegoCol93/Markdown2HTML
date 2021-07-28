@@ -11,21 +11,36 @@
 ###### #A long level 6 (######) heading... # ######
 ####### There is no H7 heading... :P ######
 
--
-- 
-- -
 
 ## Unordered List ##
 - U-List 1 Item 1
 - U-List 1 Item 2
 
-*
-* 
-* *
+-
+- 
+- -
+
+-
+
+- 
+
+- -
 
 ## Ordered List ##
 * O-List 1 Item 2
 * O-List 1 Item 1
+
+*
+* 
+* *
+
+*
+
+* 
+
+* *
+
+
 
 Hello, I'm text with no new line to a * element.
 * This is an ordered list element.
