@@ -22,7 +22,7 @@
 ## Unordered List ##
 - ul>li{1}
 - ul>li{2}
-## Unordered List ##
+## Other Unordered List ##
 - ul>li{1}
 - ul>li{2}
 
