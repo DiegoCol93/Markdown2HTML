@@ -20,7 +20,6 @@
 * O-List 1 Item 1
 
 Hello.
-
 * This is a test.
 ###### TEST #########################################
 - Another Test.
