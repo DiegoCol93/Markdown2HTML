@@ -11,18 +11,28 @@
 ###### #A long level 6 (######) heading... # ######
 ####### There is no H7 heading... :P ######
 
+-
+- 
+- -
+
 ## Unordered List ##
 - U-List 1 Item 1
 - U-List 1 Item 2
+
+*
+* 
+* *
 
 ## Ordered List ##
 * O-List 1 Item 2
 * O-List 1 Item 1
 
-Hello.
-* This is a test.
+Hello, I'm text with no new line to a * element.
+* This is an ordered list element.
+TextTest with space at the end and no new line to a h6. 
+###### H6 #########################################
+- This is an unordered list element.
 ###### TEST #########################################
-- Another Test.
 
 Hello
 
@@ -33,7 +43,3 @@ I'm **a** text
 I'm **a
 not Broken** text
 
--
-- 
-- -
-- 
