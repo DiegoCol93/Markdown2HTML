@@ -20,11 +20,11 @@
 
 
 ## Unordered List ##
-- ul>li>{1}
-- ul>li>{2}
+- ul>li{1}
+- ul>li{2}
 ## Unordered List ##
-- ul>li>{1}
-- ul>li>{2}
+- ul>li{1}
+- ul>li{2}
 
 -
 - 
