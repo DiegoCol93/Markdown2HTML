@@ -18,7 +18,6 @@
 
 
 
-
 ### Unordered List ###
 - ul>li{1}
 - ul>li{2}
@@ -26,28 +25,30 @@
 - ul>li{1}
 - ul>li{2}
 
-### Empty Unordered List ###
+### Empty Unordered Lists ###
 -
 - 
 - -
 
+
 -
 
 - 
 
 - -
 
-## Ordered List ##
+### Ordered List ###
 * ol>li{1}
 * ol>li{2} 
-## Other Ordered List ##
+### Other Ordered List ###
 * ol>li{1}
 * ol>li{2} 
 
-### Empty Ordered List ###
+### Empty Ordered Lists ###
 *
 * 
 * *
+
 
 *
 
@@ -57,19 +58,27 @@
 
 Hello
 
-Text with a
-newline
-
+I'm a text
+with 2 lines
 
 Hello, I'm text with no extra new line to a * element.
 * This is an ordered list element.
-Text with space at the end and no new line to a h6. 
-###### H6 #########################################
+Text with space at the end and no extra newline to a ###### element.
+###### ###### #########################################
 Hello, I'm text with no extra new line to a - element.
 - This is an unordered list element.
-###### H6 #########################################
+###### ###### #########################################
+
+# My title
+- He**l**lo
+- Bye
+
+Hello
 
 I'm **a** text
-I'm **a
-not Broken** text
+with __2 lines__
 
+**Or in bold**
+
+I'm **a
+not Broken text, or am I?** ;)
