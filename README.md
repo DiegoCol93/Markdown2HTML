@@ -1,6 +1,11 @@
 #
 # 
 # #
+## ##
+### ###
+#### ####
+##### #####
+###### ######
 # # #
 # H1 #
 ## H2 ##
@@ -12,9 +17,10 @@
 ####### There is no H7 heading... :P ######
 
 
+
 ## Unordered List ##
-- U-List 1 Item 1
-- U-List 1 Item 2
+- ul Item 2
+- ul Item 1
 
 -
 - 
@@ -27,8 +33,8 @@
 - -
 
 ## Ordered List ##
-* O-List 1 Item 2
-* O-List 1 Item 1
+* ol Item 2
+* ol Item 1
 
 *
 * 
@@ -39,20 +45,19 @@
 * 
 
 * *
-
-
-
-Hello, I'm text with no new line to a * element.
-* This is an ordered list element.
-TextTest with space at the end and no new line to a h6. 
-###### H6 #########################################
-- This is an unordered list element.
-###### TEST #########################################
 
 Hello
 
 Text with a
 newline
+
+
+Hello, I'm text with no extra new line to a * element.
+* This is an ordered list element.
+Text with space at the end and no new line to a h6. 
+###### H6 #########################################
+- This is an unordered list element.
+###### H6 #########################################
 
 I'm **a** text
 I'm **a
