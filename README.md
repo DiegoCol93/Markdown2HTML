@@ -134,6 +134,6 @@ TEST for the ((cContent))
 ((CCCCcccCCC CCCcccCCC CCCcccCCC))
 CCCCcccCCC ((CCCHcccCeCllCo)) CCCcccCCC
 
-((CTCCChccciCCC CsCCccicCCsC CCaCcccCCC))
+((CTCCChccciCCsC CCCccicCCsC CCaCcccCCC))
 
 CCCCcccCCC ((CTCCeccscCtCC)) CCCcccCCC
