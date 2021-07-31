@@ -16,6 +16,7 @@ def mark2html(*av):
     ouput_filename = av[2]
     flags = av[3:]
 
+
     with open(input_filename, "r") as f:
         markdown = f.readlines()
 
@@ -54,7 +55,6 @@ def mark2html(*av):
 
             while new_index < len(markdown):
                 line = clean_line(markdown[new_index])
-
                 if ((new_index + 1) < len(markdown)
                         and markdown[new_index + 1] is not None):
                     next_line = markdown[new_index + 1]
@@ -69,9 +69,10 @@ def mark2html(*av):
 
                 # If next line has no special characters.
                 if next_line[0] not in ["#", "-", "\n"]:
-                    br = r"<br\>"
                     if "-s" in flags:
                         br = r"        <br \>"
+                    else:
+                        br = r"<br\>"
                     br += "\n"
                     paragraph += br
 
@@ -89,6 +90,9 @@ def mark2html(*av):
         if "\n" not in line:
             line += "\n"
         text += line
+
+    if "-v" in flags:
+        print(text)
 
     # Write into <ouput_filename> file. ──────────────────────────────────────┤
     with open(ouput_filename, "w") as f:
@@ -168,12 +172,12 @@ def clean_line(line):
         ((...)) = ... with no 'C' or 'c' characters.
     """
     # Replace ** for <b> tags
-    line = re.sub(r"\*\*(\S+)", "<b>\1", line)
-    line = re.sub(r"(\S+)\*\*", "\1</b>", line)
+    line = re.sub(r"\*\*(\S+)", r"<b>\1", line)
+    line = re.sub(r"(\S+)\*\*", r"\1</b>", line)
 
     # Replace __ for <em> tags
-    line = re.sub(r"\_\_(\S+)", "<em>\1", line)
-    line = re.sub(r"(\S+)\_\_", "\1</em>", line)
+    line = re.sub(r"\_\_(\S+)", r"<em>\1", line)
+    line = re.sub(r"(\S+)\_\_", r"\1</em>", line)
 
     # Replace [[<content>]] for md5 hash of content.
     line = re.sub(r"\[\[(.*)\]\]", md5(r"\1".encode()).hexdigest(), line)
