@@ -201,7 +201,7 @@ def perror(*args, **kwargs):
 
 if __name__ == "__main__":
 
-    if len(av) < 2:
+    if len(av) < 3:
         perror("Usage: ./markdown2html.py README.md README.html")
         # perror("Usage: ./markdown2html.py README.md README.html [-s]")
         exit(1)
