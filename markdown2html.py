@@ -8,14 +8,13 @@ from sys import stderr
 from time import sleep
 
 
-# def mark2html(*av):
-def mark2html(input_filename, output_filename):
+def mark2html(*av):
     """
         Main method to parse and process markdown to html. ───────────────────┤
     """
-    # input_filename = av[1]
-    # ouput_filename = av[2]
-    # flags = av[3:]
+    input_filename = av[1]
+    ouput_filename = av[2]
+    flags = av[3:]
 
 
     with open(input_filename, "r") as f:
@@ -39,8 +38,7 @@ def mark2html(input_filename, output_filename):
             ul_string = "<{}>\n".format(list_type[line[0]])
             while (current_index < len(markdown) and
                    markdown[current_index][0] in ["-", "*"]):
-                # ul_string += li(markdown[current_index], flags)
-                ul_string += li(markdown[current_index])
+                ul_string += li(markdown[current_index], flags)
                 current_index += 1
             index = current_index - 1  # Because while ends one after.
             ul_string += "</{}>\n".format(list_type[line[0]])
@@ -61,25 +59,20 @@ def mark2html(input_filename, output_filename):
                         and markdown[new_index + 1] is not None):
                     next_line = markdown[new_index + 1]
                 else:
-                    next_line = ""
-
-                # if "-s" in flags:
-                #     line = "    " + line
-
-                line = line.strip()
-                line += "\n"
+                    next_line = "\n"
+                if "-s" in flags:
+                    line = "    " + line
                 paragraph += line
-
-                if bool(next_line) and next_line[0] in ["*", "#", "-", "\n"]:
+                if next_line[0] in ["*", "#", "-", "\n"]:
                     index = new_index
                     break
 
                 # If next line has no special characters.
-                if bool(next_line) and next_line[0] not in ["#", "-", "\n"]:
-                    # if "-s" in flags:
-                    #     br = r"        <br \>"
-                    # else:
-                    br = r"<br\>"
+                if next_line[0] not in ["#", "-", "\n"]:
+                    if "-s" in flags:
+                        br = r"        <br \>"
+                    else:
+                        br = r"<br\>"
                     br += "\n"
                     paragraph += br
 
@@ -98,11 +91,11 @@ def mark2html(input_filename, output_filename):
             line += "\n"
         text += line
 
-    # if "-v" in flags:
-    #     print(text)
+    if "-v" in flags:
+        print(text)
 
     # Write into <ouput_filename> file. ──────────────────────────────────────┤
-    with open(output_filename, "w") as f:
+    with open(ouput_filename, "w") as f:
         f.write(text)
 
     exit(0)
@@ -136,8 +129,7 @@ def h(line):
     return("<h{}>{}</h{}>".format(level, content, level))
 
 
-# def li(line, flags):
-def li(line):
+def li(line, flags):
     """
         Creates a list item html element.  ───────────────────────────────────┤
         <li>...</li>
@@ -157,10 +149,6 @@ def li(line):
     #     content = "    " + content
 
     return(content)
-
-
-def p(line):
-    pass
 
 
 def clean_line(line):
@@ -212,5 +200,4 @@ if __name__ == "__main__":
         perror("Missing {}".format(av[1]))
         exit(1)
 
-    # mark2html(av)
-    mark2html(av[1], av[2])
+    mark2html(*av)
