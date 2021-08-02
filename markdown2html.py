@@ -61,16 +61,21 @@ def mark2html(input_filename, output_filename):
                         and markdown[new_index + 1] is not None):
                     next_line = markdown[new_index + 1]
                 else:
-                    next_line = "\n"
+                    next_line = ""
+
                 # if "-s" in flags:
                 #     line = "    " + line
+
+                line = line.strip()
+                line += "\n"
                 paragraph += line
-                if next_line[0] in ["*", "#", "-", "\n"]:
+
+                if bool(next_line) and next_line[0] in ["*", "#", "-", "\n"]:
                     index = new_index
                     break
 
                 # If next line has no special characters.
-                if next_line[0] not in ["#", "-", "\n"]:
+                if bool(next_line) and next_line[0] not in ["#", "-", "\n"]:
                     # if "-s" in flags:
                     #     br = r"        <br \>"
                     # else:
