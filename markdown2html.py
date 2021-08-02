@@ -207,7 +207,7 @@ if __name__ == "__main__":
         exit(1)
 
     if exists(av[1]) is False:
-        perror("Missing {}".format(input_filename))
+        perror("Missing {}".format(av[1]))
         exit(1)
 
     mark2html(*av)
