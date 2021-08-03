@@ -45,7 +45,7 @@ def mark2html(*av):
             html.append(ul_string)
 
         # If only a newline.
-        elif line[0] in ["\n", " "]:
+        elif line[0] in "\n":
             line = ""
 
         # Else there are no special characters at beggining of line.
