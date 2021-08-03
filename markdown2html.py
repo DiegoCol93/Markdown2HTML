@@ -50,8 +50,6 @@ def mark2html(*av):
 
         # Else there are no special characters at beggining of line.
         else:
-            if bool(line)
-
             paragraph = "<p>\n"
             new_index = index
 
