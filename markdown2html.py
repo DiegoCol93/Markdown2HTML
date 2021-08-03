@@ -45,7 +45,7 @@ def mark2html(*av):
             html.append(ul_string)
 
         # If only a newline.
-        elif line[0] in "\n":
+        elif line[0] == "\n":
             line = ""
 
         # Else there are no special characters at beggining of line.
@@ -62,7 +62,7 @@ def mark2html(*av):
                     next_line = "\n"
                 if "-s" in flags:
                     line = "    " + line
-                paragraph += line
+                paragraph += line.strip() + "\n"
                 if next_line[0] in ["*", "#", "-", "\n"]:
                     index = new_index
                     break
