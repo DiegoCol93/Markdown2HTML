@@ -70,9 +70,9 @@ def mark2html(*av):
                 # If next line has no special characters.
                 if next_line[0] not in ["#", "-", "\n"]:
                     if "-s" in flags:
-                        br = r"        <br \>"
+                        br = r"        <br />"
                     else:
-                        br = r"<br\>"
+                        br = r"<br/>"
                     br += "\n"
                     paragraph += br
 
